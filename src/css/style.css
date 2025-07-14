@@ -35,7 +35,8 @@ body {
 .custom-dropdown-menu {
     border-radius: 2px;
     box-shadow: 0 2px 5px 0 #EBEBEB;
-    color: #777;
+    color: #a31e1eeb;
+    cursor: pointer;
 }
 
 .search-btn {
@@ -202,6 +203,19 @@ body {
     margin-bottom: 25px;
 }
 
+.custom-thumbnail{
+    border: 2px solid #EEF0EA;
+    padding: 8px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.custom-thumbnail img{
+    height: 250px;
+    width: 100%;
+   max-width: 250px;
+}
+
 .price {
     color: #53CCD7;
 }
@@ -226,6 +240,12 @@ body {
     transition: all .3s ease;
 }
 
+.add-to-cart-btn{
+    color: #53CCD7;
+    background-color:#fff;
+    font-weight: 700;
+}
+
 .overlay:hover {
     opacity: 1;
 }
@@ -239,7 +259,7 @@ body {
     top: 14px;
 }
 
-.custom-thumbnail .sale::before {
+.custom-thumbnail .sale::after {
     content: "-";
 }
 
@@ -251,7 +271,7 @@ body {
     width: 13px !important;
     height: 13px !important;
     margin: 2px !important;
-    background-color: #dbdbdb !important;
+    background-color: #f17373 !important;
 }
 
 .custom-carousel-indicators2>li.active {
@@ -262,6 +282,7 @@ body {
     border: 4px solid #EEF0EA;
     border-radius: 2px;
     padding: 20px;
+    cursor: pointer;
 }
 
 .panel h4,
@@ -269,10 +290,12 @@ body {
     font-size: 130%;
     margin-bottom: 15px;
     margin-top: 0;
+    cursor: pointer;
 }
 
 .custom-text-muted {
-    color: #A9A9A9;
+    color: #201f1f;
+    cursor: pointer;
 }
 
 .arrow-btn {
