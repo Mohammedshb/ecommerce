@@ -1,0 +1,9 @@
+
+@use 'sass:color';
+
+$brand-warning: #f8ad47;
+$brand-primary: #53ccd7;
+$brand-danger: #ff3956;
+
+$btn-danger-color-dark: color.adjust($brand-danger, $lightness: -25%);
+$btn-warning-color-dark: color.adjust($brand-warning, $lightness: -25%);

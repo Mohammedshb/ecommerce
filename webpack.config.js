@@ -1,4 +1,3 @@
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -39,13 +38,22 @@ module.exports = {
           minimize: true,
         },
       },
-    
       {
         test: /\.css$/i,
-         exclude: /bootstrap\.min\.css$/i,
+        exclude: /bootstrap\.min\.css$/i,
         use: [
             MiniCssExtractPlugin.loader,
             "css-loader"
+        ],
+      },
+    
+      {
+         test: /\.s[ac]ss$/i,
+         exclude: /bootstrap\.min\.css$/i,
+        use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader",
         ],
       },
       {
@@ -85,32 +93,13 @@ module.exports = {
       
   },
   plugins: [
-    new HtmlWebpackPlugin({
-        filename:"index.html",
-        template: "./src/index.html"
+    ...['index', 'product', 'checkout', 'payment', 'contact', 'search'].map(page => {
+      return new HtmlWebpackPlugin({
+        template: `./src/${page}.html`,
+        filename: `${page}.html`,
+        chunks: ['app']
+      });
     }),
-     new HtmlWebpackPlugin({
-        filename:"product.html",
-        template: "./src/product.html"
-    }),
-     new HtmlWebpackPlugin({
-        filename:"checkout.html",
-        template: "./src/checkout.html"
-    }),
-     new HtmlWebpackPlugin({
-        filename:"payment.html",
-        template: "./src/payment.html"
-    }),
-    new HtmlWebpackPlugin({
-        filename:"contact.html",
-        template: "./src/contact.html"
-    }),
-     new HtmlWebpackPlugin({
-        filename:"search.html",
-        template: "./src/search.html"
-    }),
-
-
     new MiniCssExtractPlugin({
       filename: "css/style.css"
     }),

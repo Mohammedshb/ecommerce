@@ -25,7 +25,9 @@
     "postcss-loader": "^8.1.1",
     "rtlcss": "^4.3.0",
     "rtlcss-loader": "^1.0.3",
-    "webpack": "^5.99.9",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
+    "webpack": "^5.100.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.2"
   },
